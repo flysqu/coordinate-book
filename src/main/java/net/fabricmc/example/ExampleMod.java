@@ -1,6 +1,5 @@
 package net.fabricmc.example;
 
-import com.google.gson.Gson;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.example.gui.CoordBookGUI;
 import net.fabricmc.example.gui.CoordBookScreen;
@@ -9,7 +8,6 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,10 +25,10 @@ public class ExampleMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		KeyBinding keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.examplemod.spook", // The translation key of the keybinding's name
+				"key.examplemod.Coordinate-Book", // The translation key of the keybinding's name
 				InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
 				GLFW.GLFW_KEY_HOME, // The keycode of the key
-				"category.examplemod.test" // The translation key of the keybinding's category.
+				"category.examplemod.Coordinate-Book" // The translation key of the keybinding's category.
 		));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
