@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.lop01.coorkeeper.CoordKeeper"
+      "net.lop01.coordkeeper.CoordKeeper"
     ]
   },
   "mixins": [
