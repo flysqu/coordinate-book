@@ -1,4 +1,4 @@
-package net.fabricmc.example.json;
+package net.lop01.coordkeeper.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

@@ -1,4 +1,4 @@
-package net.fabricmc.example.gui;
+package net.lop01.coordkeeper.gui;
 
 import io.github.cottonmc.cotton.gui.GuiDescription;
 import io.github.cottonmc.cotton.gui.client.CottonClientScreen;

@@ -6,7 +6,7 @@
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "net.lop01.coorkeeper.mixin.ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1

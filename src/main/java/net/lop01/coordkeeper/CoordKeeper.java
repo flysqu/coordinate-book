@@ -1,8 +1,8 @@
-package net.fabricmc.example;
+package net.lop01.coordkeeper;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.example.gui.CoordBookGUI;
-import net.fabricmc.example.gui.CoordBookScreen;
+import net.lop01.coordkeeper.gui.CoordBookGUI;
+import net.lop01.coordkeeper.gui.CoordBookScreen;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
@@ -12,7 +12,7 @@ import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ExampleMod implements ModInitializer {
+public class CoordKeeper implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.

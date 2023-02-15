@@ -1,12 +1,12 @@
-package net.fabricmc.example.gui;
+package net.lop01.coordkeeper.gui;
 
 import io.github.cottonmc.cotton.gui.widget.*;
-import net.fabricmc.example.json.write;
+import net.lop01.coordkeeper.json.write;
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
 
 import net.minecraft.text.Text;
 
-import net.fabricmc.example.json.read;
+import net.lop01.coordkeeper.json.read;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
