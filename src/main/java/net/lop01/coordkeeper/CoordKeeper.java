@@ -25,10 +25,10 @@ public class CoordKeeper implements ModInitializer {
 		// Proceed with mild caution.
 
 		KeyBinding keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-				"key.examplemod.Coordinate-Book", // The translation key of the keybinding's name
+				"Open GUI", // The translation key of the keybinding's name
 				InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
 				GLFW.GLFW_KEY_HOME, // The keycode of the key
-				"category.examplemod.Coordinate-Book" // The translation key of the keybinding's category.
+				"Coord Keeper" // The translation key of the keybinding's category.
 		));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
