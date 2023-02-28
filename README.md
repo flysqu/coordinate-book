@@ -11,6 +11,4 @@
 + Encryption Of Files (You would input encryption Key In GUI so it isn't saved) 
 + Google Cloud? (Will only do this if there's high demand)
 
-### Images can be found in the "Gallery" tab
-
-A little note
+### Images can be found in the "Gallery" tab on modrinth
