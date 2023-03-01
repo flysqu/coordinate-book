@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "coordkeeper",
   "version": "${version}",
-
   "name": "CoordKeeper",
   "description": "Introduces a menu where you can note down coordinates",
   "authors": [
@@ -12,10 +11,8 @@
     "homepage": "https://github.com/Lop010/coordinate-book",
     "sources": "https://github.com/Lop010/coordinate-book"
   },
-
   "license": "MIT",
   "icon": "assets/coordkeeper/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -25,7 +22,6 @@
   "mixins": [
     "coordkeeper.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.14.11",
     "fabric-api": "*",

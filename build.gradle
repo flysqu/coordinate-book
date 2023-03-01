@@ -33,7 +33,13 @@ dependencies {
 
 	modImplementation include("io.github.cottonmc:LibGui:6.5.2+1.19.3")
 
+	// AES Encryption
+	implementation 'com.github.mervick:aes-everywhere-java:1.2.7'
+
 	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+	// https://mvnrepository.com/artifact/org.jasypt/jasypt
+	implementation group: 'org.jasypt', name: 'jasypt', version: '1.9.2'
 }
 
 processResources {
