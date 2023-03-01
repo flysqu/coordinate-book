@@ -3,6 +3,7 @@ package net.lop01.coordkeeper.json;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import net.lop01.coordkeeper.encryptdecrypt.encryptdecrypt;
+import org.jasypt.exceptions.EncryptionOperationNotPossibleException;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -19,17 +20,35 @@ public class read {
 
         String coord = ar[num].substring(ar[num].indexOf(":") + 1).replaceAll("\"", "").replace("}]", "");
 
+
+        boolean wrongpass = false;
         // Encryption Stuff
         if (encrypt) {
-            coord = encryptdecrypt.decrypt(password, coord);
+            try {
+                coord = encryptdecrypt.decrypt(password, coord);
 
-            coord = encryptdecrypt.CBTOI(coord);
+                coord = encryptdecrypt.CBTOI(coord);
+            }catch (EncryptionOperationNotPossibleException e) {
+                System.out.println("Wrong Password Inputed Please Try Again");
+                wrongpass = true;
+            }
         }
-
+        System.out.println(wrongpass);
         if (coord.contains("Q")) {
             coord = coord.replace("Q", ",");
         }
 
-        return coord;
+        // If you have the wrong password return empty string
+        // If its something else ie false send decrypted text
+        // This should only happen if the user is using encryption if its of do as normal
+        if (encrypt) {
+            if (wrongpass) {
+                return "false";
+            } else {
+                return coord;
+            }
+        }else {
+            return coord;
+        }
     }
 }

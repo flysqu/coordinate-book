@@ -2,7 +2,10 @@ plugins {
 	id 'fabric-loom' version '1.1-SNAPSHOT'
 	id 'maven-publish'
 }
-
+plugins {
+	id 'com.github.johnrengelman.shadow' version '7.1.2'
+	id 'java'
+}
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
@@ -10,12 +13,16 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+
+
 repositories {
 	maven {
 		name = "CottonMC"
 		url = "https://server.bbkr.space/artifactory/libs-release"
 	}
 }
+
+
 
 dependencies {
 	// To change the versions see the gradle.properties file
@@ -39,7 +46,7 @@ dependencies {
 	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 
 	// https://mvnrepository.com/artifact/org.jasypt/jasypt
-	implementation group: 'org.jasypt', name: 'jasypt', version: '1.9.2'
+	modImplementation include(group: 'org.jasypt', name: 'jasypt', version: '1.9.2')
 }
 
 processResources {

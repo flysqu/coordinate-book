@@ -61,6 +61,7 @@ public class CoordBookGUI extends LightweightGuiDescription {
         AtomicReference<Boolean> ChecktoogleAES = new AtomicReference<>(Boolean.FALSE);
         WToggleButton toggleAES = new WToggleButton(Text.literal("  Encrypt"));
 
+
         toggleAES.setOnToggle(on -> {
             ChecktoogleAES.set((on ? Boolean.TRUE : Boolean.FALSE));
         });
@@ -86,18 +87,21 @@ public class CoordBookGUI extends LightweightGuiDescription {
         WButton revert = new WButton(Text.translatable("Revert To Save"));
         revert.setOnClick(() -> {
             try (BufferedReader reader = new BufferedReader(new FileReader("config//coordpage" + pagenum + ".json"))) {
-
-                // Set coordinates to text fields
-                field1.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 0));
-                field2.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 1));
-                field3.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 2));
-                field4.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 3));
-                field5.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 4));
-                field6.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 5));
-                field7.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 6));
-                field8.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 7));
-                pagename.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 8));
-
+                // Check if the password is correct before setting coords
+                if (!(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 0) == "false")) {
+                    // Set coordinates to text fields
+                    field1.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 0));
+                    field2.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 1));
+                    field3.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 2));
+                    field4.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 3));
+                    field5.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 4));
+                    field6.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 5));
+                    field7.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 6));
+                    field8.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 7));
+                    pagename.setText(read.readfunct(toggleAES.getToggle(), EncryptPass.getText(), pagenum.get(), 8));
+                }else {
+                    EncryptPass.setText("Wrong Pass");
+                }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
