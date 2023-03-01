@@ -6,7 +6,7 @@
 + Ultra Fast Saving And Loading ⚡
 + Very Small File Size (Saves And .jar) 📄
 + Works In Singleplayer And Multiplayer ↔️
-+ Encryption Of Files (Input In GUI) 
++ Encryption Of Files (Input In GUI) 🔒
 
 ## Upcoming Features
 + Google Cloud? (Will only do this if there's high demand)
