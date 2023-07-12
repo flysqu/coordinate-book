@@ -5,12 +5,16 @@ import io.github.cottonmc.cotton.gui.widget.*;
 import lop01.coordinatebook.coordinatebook.json.read; // lop01.coordinatebook.coordinatebook.encryptdecrypt.encryptdecrypt
 import lop01.coordinatebook.coordinatebook.json.write;
 import net.minecraft.text.Text;
+import lop01.coordinatebook.coordinatebook.playerposition.getposition;
+import lop01.coordinatebook.coordinatebook.playerposition.availableslot;
+
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -79,7 +83,7 @@ public class CoordBookGUI extends LightweightGuiDescription {
             write writefuncts = new write();
             writefuncts.writeFunctWithGson(ChecktoogleAES, EncryptPass.getText(), pagenum.get(), pagename.getText(), field1.getText(), field2.getText(), field3.getText(), field4.getText(), field5.getText(), field6.getText(), field7.getText(), field8.getText());
         });
-        root.add(save_and_exit, 12, 12, 4, 1);
+        root.add(save_and_exit, 11, 12, 5, 1);
 
         WLabel pagenumlabel = new WLabel(Text.translatable("    Page: " + pagenum));
         root.add(pagenumlabel, 1, 1);
@@ -109,6 +113,26 @@ public class CoordBookGUI extends LightweightGuiDescription {
             }
         });
         root.add(revert, 1, 12, 5, 1);
+
+        WButton playerpos = new WButton(Text.translatable("GPS"));
+        playerpos.setOnClick(() -> {
+            var position = getposition.getcoordinates();
+            var slotid = availableslot.getavailableslot(field5.getText(), field6.getText(), field7.getText(), field8.getText());
+
+            if (Objects.equals(slotid, 1)) {
+                field5.setText(position);
+            }
+            if (Objects.equals(slotid, 2)) {
+                field6.setText(position);
+            }
+            if (Objects.equals(slotid, 3)) {
+                field7.setText(position);
+            }
+            if (Objects.equals(slotid, 4)) {
+                field8.setText(position);
+            }
+        });
+        root.add(playerpos, 7, 12, 3, 1);
 
         WButton nextpage = new WButton(Text.translatable("→"));
         nextpage.setOnClick(() -> {

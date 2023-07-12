@@ -1,17 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "coordinate-book",
+  "id": "coordkeeper",
   "version": "${version}",
-  "name": "coordinate-book",
-  "description": "",
+  "name": "CoordKeeper",
+  "description": "This is the perfect mod to keep your coordinates safe and in a convenient location!",
   "authors": [
     "Lop01"
   ],
   "contact": {
-    "repo": "https://github.com/Lop010/coordinate-book"
+    "homepage": "https://github.com/Lop010/coordinate-book",
+    "sources": "https://github.com/Lop010/coordinate-book"
   },
   "license": "MIT",
-  "icon": "assets/coordinate-book/icon.png",
+  "icon": "icon.png",
   "environment": "client",
   "entrypoints": {
     "main": [
